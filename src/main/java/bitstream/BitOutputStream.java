@@ -19,6 +19,7 @@ public class BitOutputStream extends OutputStream{
     private final short BYTE_SIZE  = 8;
     private byte currentBit = 0;
     private byte bufferByte = 0;
+    private int padding = 0;
 
 
     public BitOutputStream(String filename) throws FileNotFoundException {
@@ -65,10 +66,15 @@ public class BitOutputStream extends OutputStream{
         reset();
     }
 
+    public int getPadding(){
+        return padding;
+    }
+
 
     @Override
     public void close() throws IOException {
         if(currentBit != 0){
+            padding = BYTE_SIZE - currentBit;
            flushByte();
         }
         writer.close();
