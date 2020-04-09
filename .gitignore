@@ -1,3 +1,9 @@
 out/
 .gradle/
+gradle/
 .idea/
+build/
+*.txt
+bitstream-java.iml
+gradlew.bat
+gradlew
