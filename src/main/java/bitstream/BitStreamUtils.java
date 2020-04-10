@@ -1,4 +1,4 @@
-package main.java.bitstream;
+package bitstream;
 
 final class BitStreamUtils {
     static byte BYTE_SIZE = 8;

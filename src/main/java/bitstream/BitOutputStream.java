@@ -1,4 +1,4 @@
-package main.java.bitstream;
+package bitstream;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,11 +14,11 @@ import java.io.OutputStream;
  */
 public class BitOutputStream extends OutputStream{
 
-    private final FileOutputStream writer;
-    private final String FILENAME;
-    private final short BYTE_SIZE  = 8;
-    private byte currentBit = 0;
-    private byte bufferByte = 0;
+    protected final FileOutputStream writer;
+    protected final String FILENAME;
+    protected final short BYTE_SIZE  = 8;
+    protected byte currentBit = 0;
+    protected byte bufferByte = 0;
 
 
     public BitOutputStream(String filename) throws FileNotFoundException {
@@ -72,10 +72,11 @@ public class BitOutputStream extends OutputStream{
            flushByte();
         }
         writer.close();
+        super.close();
     }
 
 
-    private void reset(){
+    void reset(){
         bufferByte = 0;
         currentBit = 0;
     }

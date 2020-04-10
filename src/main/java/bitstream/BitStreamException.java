@@ -1,4 +1,4 @@
-package main.java.bitstream;
+package bitstream;
 
 public class BitStreamException extends Exception{
     public BitStreamException(String description){

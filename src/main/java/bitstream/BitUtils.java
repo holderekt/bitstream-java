@@ -1,4 +1,4 @@
-package main.java.bitstream;
+package bitstream;
 
 public class BitUtils {
     private BitUtils(){}

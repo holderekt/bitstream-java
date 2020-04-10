@@ -1,4 +1,4 @@
-package main.java.bitstream;
+package bitstream;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,11 +13,11 @@ import java.io.InputStream;
  */
 public class BitInputStream extends InputStream {
 
-    private final FileInputStream reader;
-    private final String FILENAME;
-    private final short BYTE_SIZE = 8;
-    private byte currentBit = 8;
-    private byte bufferByte = 0;
+    protected final FileInputStream reader;
+    protected final String FILENAME;
+    protected final short BYTE_SIZE = 8;
+    protected byte currentBit = 0;
+    protected byte bufferByte = 0;
 
     public BitInputStream(String filename) throws FileNotFoundException {
         this.FILENAME = filename;
@@ -44,5 +44,16 @@ public class BitInputStream extends InputStream {
             }
             return ret;
         }
+    }
+
+    @Override
+    public void close() throws IOException {
+        reader.close();
+        super.close();
+    }
+
+    @Override
+    public int available() throws IOException {
+        return reader.available();
     }
 }
