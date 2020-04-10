@@ -53,6 +53,6 @@ public class BitInputStream extends InputStream {
     }
 
     public int avaible() throws IOException {
-        return (BYTE_SIZE - currentBit) + (reader.available() * 8);
+        return ((currentBit != 0) ? BYTE_SIZE - currentBit : 0) + (reader.available() * 8);
     }
 }

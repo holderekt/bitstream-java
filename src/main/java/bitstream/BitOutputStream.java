@@ -19,6 +19,7 @@ public class BitOutputStream extends OutputStream{
     protected final short BYTE_SIZE  = 8;
     protected byte currentBit = 0;
     protected byte bufferByte = 0;
+    protected int padding;
 
 
     public BitOutputStream(String filename) throws FileNotFoundException {
