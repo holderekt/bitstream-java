@@ -65,10 +65,15 @@ public class BitOutputStream extends OutputStream{
         reset();
     }
 
+    public int getPadding(){
+        return padding;
+    }
+
 
     @Override
     public void close() throws IOException {
         if(currentBit != 0){
+            padding = BYTE_SIZE - currentBit;
            flushByte();
         }
         writer.close();

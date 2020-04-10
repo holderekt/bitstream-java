@@ -1,6 +1,7 @@
 out/
 build/
 .gradle/
+<<<<<<< HEAD
 .idea/
 gradle/
 gradlew
@@ -8,3 +9,12 @@ gradlew.bat
 bitstream-java.iml
 *.txt
 src/main/java/Main.java
+=======
+gradle/
+.idea/
+build/
+*.txt
+bitstream-java.iml
+gradlew.bat
+gradlew
+>>>>>>> 3815dddbd266e2d087dec78de36d4c02c576b01d

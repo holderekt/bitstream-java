@@ -52,8 +52,7 @@ public class BitInputStream extends InputStream {
         super.close();
     }
 
-    @Override
-    public int available() throws IOException {
-        return reader.available();
+    public int avaible() throws IOException {
+        return (BYTE_SIZE - currentBit) + (reader.available() * 8);
     }
 }
