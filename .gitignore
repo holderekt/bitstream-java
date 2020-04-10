@@ -1,6 +1,10 @@
 out/
+build/
 .gradle/
 .idea/
+gradle/
+gradlew
+gradlew.bat
 bitstream-java.iml
 *.txt
 src/main/java/Main.java
